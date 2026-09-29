@@ -101,13 +101,12 @@
     .compact-row { display: grid; grid-template-columns: 1fr auto; gap: 2rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
     .compact-row strong { font-family: Newsreader, Georgia, serif; font-size: 1.24rem; font-weight: 500; }
     .compact-row span { color: var(--muted); text-align: right; }
-    .contact { padding: 6rem 0; background: var(--ink); color: var(--paper); }
-    .contact-grid { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: end; }
-    .contact h2 { max-width: 730px; font-size: clamp(2.8rem, 6vw, 5.6rem); }
-    .contact h2 em { color: #d3b789; font-weight: 400; }
-    .contact-links { display: grid; gap: .8rem; text-align: right; }
-    .contact a { color: var(--paper); }
-    footer { padding: 1.5rem 0; background: var(--ink); color: #a9a197; border-top: 1px solid #3a352f; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; }
+    footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--line); background: var(--ivory); }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+    .footer-name { display: block; font-family: Newsreader, Georgia, serif; font-size: 1.5rem; font-weight: 500; }
+    .footer-note { display: block; margin-top: .35rem; color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 1px solid var(--brass-soft); font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
     @media (max-width: 780px) {
       .wrap { width: min(calc(100% - 32px), var(--max)); }
       nav { min-height: 64px; }
@@ -124,8 +123,7 @@
       .degree { text-align: left; }
       .compact-row { grid-template-columns: 1fr; gap: .3rem; }
       .compact-row span { text-align: left; }
-      .contact-grid { grid-template-columns: 1fr; align-items: start; }
-      .contact-links { text-align: left; }
+      .footer-grid { grid-template-columns: 1fr; align-items: start; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   </style>
@@ -180,8 +178,7 @@
       <div class="section-kicker"><span class="section-number">05</span><h2>Honors &<br>awards</h2></div>
       <div class="compact"><div class="compact-row"><strong>Academic Excellence Award</strong><span>Four-time recipient · Top 5% semester-level performance · NCCU</span></div><div class="compact-row"><strong>Taishan Academic Scholarship</strong><span>Academic Excellence Student in Statistics · NCCU · 2020</span></div></div>
     </div></section>
-    <section class="contact" id="contact"><div class="wrap contact-grid"><h2>Let’s discuss <em>ideas, models,</em> and research.</h2><div class="contact-links"><a href="mailto:liminghan045@gmail.com">Email</a><a href="https://www.linkedin.com/in/ming-han-li-6b7797216/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/HankLiTW" target="_blank" rel="noopener">GitHub ↗</a></div></div></section>
   </main>
-  <footer><div class="wrap">Ming-Han Li · Research, rigorous thinking, and the occasional tennis match.</div></footer>
+  <footer id="contact"><div class="wrap footer-grid"><div><span class="footer-name">Ming-Han Li</span><span class="footer-note">Operations · Incentives · Contracting</span></div><div class="footer-links"><a href="mailto:liminghan045@gmail.com">Email</a><a href="https://www.linkedin.com/in/ming-han-li-6b7797216/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/HankLiTW" target="_blank" rel="noopener">GitHub ↗</a></div></div></footer>
 </body>
 </html>
