@@ -1,331 +1,184 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics Test -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6RQJ0R3XQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-M6RQJ0R3XQ');
-  </script>
-
-  <meta name="author" content="Ming-Han Li">    
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <link rel="shortcut icon" href="./assets/NCCU_LOGO.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ming-Han Li">
   <meta name="description" content="Ming-Han Li is an LSE EME graduate interested in operations management, operations research, incentives, and contracting.">
-  <meta name="keywords" content="Ming-Han Li, Hank Li, operations management, operations research, incentives, contracting, econometrics, LSE, NCCU">
-  <meta name="Ming-Han Li's Homepage" http-equiv="Content-Type" content="Ming-Han Li's Homepage">
+  <meta name="theme-color" content="#f6f2ea">
+  <link rel="icon" href="assets/NCCU_LOGO.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
   <title>Ming-Han Li</title>
-
-  <style type="text/css">
-    /* Design Credits: Jon Barron and Abhishek Kar and Saurabh Gupta*/
-    a {
-    color: #1772d0;
-    text-decoration:none;
+  <style>
+    :root {
+      --ivory: #f6f2ea;
+      --paper: #fffdf8;
+      --ink: #1e1b17;
+      --muted: #665f55;
+      --brass: #8a673b;
+      --brass-soft: #b39262;
+      --line: #dcd2c3;
+      --max: 1120px;
     }
-    a:focus, a:hover {
-    color: #f09228;
-    text-decoration:none;
-    }
-    body,td,th {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
       font-size: 16px;
-      font-weight: 400
+      line-height: 1.72;
+      text-rendering: optimizeLegibility;
     }
-    heading {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-      font-size: 19px;
-      font-weight: 1000
+    a { color: inherit; text-decoration-color: var(--brass-soft); text-underline-offset: 4px; }
+    a:hover { color: var(--brass); }
+    a:focus-visible { outline: 2px solid var(--brass); outline-offset: 5px; }
+    .skip { position: absolute; left: -9999px; top: 1rem; z-index: 20; }
+    .skip:focus { left: 1rem; background: var(--paper); padding: .7rem 1rem; }
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(138,103,59,.22);
+      background: rgba(246,242,234,.94);
+      backdrop-filter: blur(12px);
     }
-    strong {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 800
+    nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .wordmark { font-family: Newsreader, Georgia, serif; font-size: 1.24rem; font-weight: 600; text-decoration: none; letter-spacing: -.01em; }
+    .navlinks { display: flex; align-items: center; gap: 1.6rem; }
+    .navlinks a { font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .navlinks .cv { border-left: 1px solid var(--line); padding-left: 1.6rem; color: var(--brass); }
+    main { overflow: hidden; }
+    .hero {
+      min-height: 690px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      align-items: center;
+      gap: clamp(3rem, 8vw, 8rem);
+      padding: 7rem 0 6rem;
     }
-    strongred {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-      color: 'red' ;
-      font-size: 16px
+    .eyebrow { margin: 0 0 1.4rem; color: var(--brass); font-size: .75rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Newsreader, Georgia, serif; font-weight: 500; }
+    h1 { margin: 0; font-size: clamp(4.3rem, 8vw, 7.2rem); line-height: .88; letter-spacing: -.055em; }
+    .hero h1 { white-space: nowrap; }
+    .hero h1 span { display: inline; margin-left: .08em; font-style: italic; color: var(--ink); }
+    .lead { max-width: 660px; margin: 2.3rem 0 0; font-family: Newsreader, Georgia, serif; font-size: clamp(1.35rem, 2.1vw, 1.72rem); line-height: 1.44; color: #3e3932; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; min-height: 46px; padding: .7rem 1.15rem; border: 1px solid var(--ink); font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; transition: background .2s, color .2s, border-color .2s; }
+    .button.primary { background: var(--ink); color: var(--paper); }
+    .button:hover { background: var(--brass); border-color: var(--brass); color: #fff; }
+    .portrait-shell { position: relative; max-width: 315px; justify-self: end; }
+    .portrait-shell::before { content: ""; position: absolute; inset: -16px 16px 16px -16px; border: 1px solid var(--brass-soft); z-index: -1; }
+    .portrait { display: block; width: 100%; aspect-ratio: 4/5.2; object-fit: cover; }
+    .portrait-note { margin: 1rem 0 0; color: var(--muted); font-size: .7rem; letter-spacing: .12em; text-align: right; text-transform: uppercase; }
+    .section { padding: clamp(5rem, 9vw, 8rem) 0; border-top: 1px solid var(--line); scroll-margin-top: 74px; }
+    .section-grid { display: grid; grid-template-columns: 240px 1fr; gap: clamp(3rem, 8vw, 8rem); }
+    .section-kicker { position: sticky; top: 110px; align-self: start; }
+    .section-number { display: block; margin-bottom: 1rem; color: var(--brass); font-size: .7rem; letter-spacing: .18em; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.02; letter-spacing: -.025em; }
+    .about-copy { max-width: 760px; font-family: Newsreader, Georgia, serif; font-size: clamp(1.35rem, 2.4vw, 2rem); line-height: 1.48; color: #39342d; }
+    .about-copy p { margin: 0 0 1.2rem; }
+    .research-list { border-top: 1px solid var(--ink); }
+    .research-item { display: grid; grid-template-columns: 160px 1fr; gap: 2.2rem; padding: 2.4rem 0 2.7rem; border-bottom: 1px solid var(--line); }
+    .meta { color: var(--muted); font-size: .82rem; line-height: 1.55; }
+    .meta strong { display: block; color: var(--ink); font-weight: 600; }
+    h3 { margin: 0 0 .45rem; font-size: clamp(1.55rem, 2.8vw, 2.15rem); line-height: 1.2; }
+    h3 a { text-decoration: none; }
+    .role { margin: 0 0 1.2rem; color: var(--brass); font-size: .86rem; font-weight: 600; letter-spacing: .035em; }
+    .clean-list { margin: 0; padding-left: 1.15rem; color: #423d36; }
+    .clean-list li { margin-bottom: .62rem; padding-left: .4rem; }
+    .clean-list li::marker { color: var(--brass-soft); }
+    .education-list { border-top: 1px solid var(--ink); }
+    .education-row { display: grid; grid-template-columns: 130px 1fr auto; gap: 2rem; align-items: baseline; padding: 2rem 0; border-bottom: 1px solid var(--line); }
+    .year { color: var(--brass); font-size: .78rem; font-weight: 600; letter-spacing: .08em; }
+    .institution { font-family: Newsreader, Georgia, serif; font-size: 1.55rem; }
+    .degree { color: var(--muted); text-align: right; max-width: 360px; }
+    .compact { display: grid; gap: 1.1rem; }
+    .compact-row { display: grid; grid-template-columns: 1fr auto; gap: 2rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
+    .compact-row strong { font-family: Newsreader, Georgia, serif; font-size: 1.24rem; font-weight: 500; }
+    .compact-row span { color: var(--muted); text-align: right; }
+    footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--line); background: var(--ivory); }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+    .footer-name { display: block; font-family: Newsreader, Georgia, serif; font-size: 1.5rem; font-weight: 500; }
+    .footer-note { display: block; margin-top: .35rem; color: var(--muted); font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 1px solid var(--brass-soft); font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    @media (max-width: 780px) {
+      .wrap { width: min(calc(100% - 32px), var(--max)); }
+      nav { min-height: 64px; }
+      .navlinks a:not(.cv) { display: none; }
+      .navlinks .cv { border: 0; padding-left: 0; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 4rem; padding: 5rem 0 5rem; }
+      .hero h1 { font-size: clamp(3.45rem, 16vw, 4.3rem); }
+      .portrait-shell { width: 72%; justify-self: center; }
+      .section { scroll-margin-top: 64px; }
+      .section-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .section-kicker { position: static; }
+      .research-item { grid-template-columns: 1fr; gap: .7rem; }
+      .education-row { grid-template-columns: 1fr; gap: .4rem; }
+      .degree { text-align: left; }
+      .compact-row { grid-template-columns: 1fr; gap: .3rem; }
+      .compact-row span { text-align: left; }
+      .footer-grid { grid-template-columns: 1fr; align-items: start; }
     }
-    sectionheading {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-      font-size: 22px;
-      font-weight: 600
-    }
-    pageheading {
-      font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
-      font-size: 38px;
-      font-weight: 400
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   </style>
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="./assets/font.css"> -->
-  <link rel="stylesheet" href="./assets/main.css">
-  <script src="./assets/main.js"></script>
-  <script src="./assets/scroll.js"></script>
-  <!-- Github; Place this tag in your head or just before your close body tag. -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
-
 <body>
-    <div class="outercontainer"> 
-      <!-- <script src="./assets/header.js"></script> -->
-      <header>
-        <div class="container topnav" id="home">
-          <a href="#home" class="active" onclick="clickOther()">Home</a>
-          <a href="#projects" onclick="clickOther()">Research</a>
-          <a href="#teaching" onclick="clickOther()">Teaching</a>
-          <a href="#honors" onclick="clickOther()">Honors & Awards</a>
-          <a href="javascript:void(0);" class="icon" onclick="clickMenu()">
-            <i class="fa fa-bars"></i>
-          </a>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="wordmark" href="#top">Ming-Han Li</a>
+      <div class="navlinks">
+        <a href="#research">Research</a><a href="#education">Education</a><a href="#honors">Honors</a>
+        <a class="cv" href="assets/CV_work__Ming_Han_Li.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div>
+        <p class="eyebrow">Operations · Incentives · Contracting</p>
+        <h1>Ming-Han <span>Li</span></h1>
+        <p class="lead">I study how incentives and contracts shape decisions under uncertainty, with interests spanning operations management and operations research.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="assets/CV_work__Ming_Han_Li.pdf" target="_blank" rel="noopener">View CV</a>
+          <a class="button" href="mailto:liminghan045@gmail.com">Email me</a>
         </div>
-      </header>
-
-      <div class="container body">
-        <div class="content heading h-anchor" border-top="20">
-          <div class="text info">
-            <table border="0" align="center" border="0" cellspacing="0">
-            <tr><td>
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-              <p align="center">
-                <pageheading>Ming-Han Li</pageheading><br>
-                <b>Email</b>: liminghan045 [at] gmail.com
-                <font id="email" style="display:inline;">
-                  <noscript><i>Please enable Javascript to view</i></noscript>
-                </font>
-              </p>
-              <tr>
-                <td width="25%" valign="top"><a href="assets/MingHanLi.jpg"><img src="assets/MingHanLi.jpg" width="100%" style="border-radius:100px"></a>
-                  <p align=center>
-                      <a href="assets/CV_work__Ming_Han_Li.pdf" target="_blank"><img src="assets/logo_cv.png" width="32px"></a>  
-                      <a href="https://www.linkedin.com/in/ming-han-li-6b7797216/" target="_blank"><img src="assets/logo_linkedin.png" width="32px"></a>  
-                      <a href="https://github.com/HankLiTW" target="_blank"><img src="assets/logo_github.png" width="32px"></a>  
-
-                  </p>
-                </td>
-
-                <td width="75%" valign="top" align="justify">
-                  <p>
-                    Welcome! I recently completed the MSc in Econometrics and
-                    Mathematical Economics (EME) at the London School of Economics
-                    and Political Science.
-                  </p>
-                  <p>
-                    I am preparing to apply to Ph.D. programs in operations management
-                    and operations research. My research interests include incentives,
-                    contracting, and decision-making under uncertainty.
-                  </p>
-                  <p>
-                    I previously earned bachelor's degrees in Statistics and Economics
-                    from National Chengchi University (NCCU), with an overall GPA of
-                    <b>4.20/4.30</b>.
-                  </p>
-                  <p>
-                    Please see my <a href="assets/CV_work__Ming_Han_Li.pdf">CV</a>
-                    or contact me if you would like to learn more about my work.
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <!-- =================== Bio =================== -->
-          <table width="100%" align="center" style="margin-bottom:30px" cellspacing="0" cellpadding="0" border="0">
-            <tr>
-                <th width="15%" valign="top" align="center">
-                <a href="https://www.nccu.edu.tw/" target="_blank"><img src="assets/NCCU_LOGO.jpg" alt="sym" width="45%"></a>
-                <p style="line-height:1.3; font-size:12pt">NCCU<br>BS in Statistics and BA in Economics<br>Sep. 2018 - Jan. 2023</p>
-                </th>
-              
-                <th width="15%" valign="top" align="center">
-                <a href="https://econ.ntu.edu.tw/" target="_blank"><img src="assets/logo_ntu.png" alt="sym" width="45%"></a>
-                <p style="line-height:1.3; font-size:12pt">NTU<br>Research Assistant <br>June 2023 - Aug. 2024 </p>
-                </th>
-          <th width="15%" valign="top" align="center">
-              <a href="https://www.lse.ac.uk/economics" target="_blank">
-                  <img src="assets/LSE_logo.png" alt="sym" width="100%">
-              </a>
-              <p style="line-height:1.3; font-size:12pt; padding-top: 19px;">LSE<br>MSc in Econometrics and Mathematical Economics <br> Aug. 2024 - June 2025</p>
-          </th>
-   
-            </tr>
-          </table>
-        </div>
-        <!-- ===================Projects =================== -->
-<!-- =================== Research Experience =================== -->
-<div class="content anchor" id="projects">
-  <table width="100%" align="center" border="0" cellspacing="0">
-    <tbody>
-      <tr>
-        <td>
-          <sectionheading>
-            &nbsp;&nbsp;Research Experience
-          </sectionheading>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table
-    width="100%"
-    align="center"
-    border="0"
-    cellspacing="0"
-    cellpadding="15"
-  >
-    <tbody>
-      <!-- Decision-Making Autonomy Project -->
-      <tr>
-        <td width="28%" valign="top" align="center">
-          <p>
-            <b>National Taiwan University</b><br>
-            <em>Jun. 2023 – Aug. 2024</em>
-          </p>
-        </td>
-
-        <td width="72%" valign="top">
-          <p>
-            <a
-              href="https://github.com/HankLiTW/SCR-Program"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <heading>Decision-Making Autonomy and Emotional Outcomes</heading>
-            </a>
-            <br>
-
-            <b>Research Assistant</b><br>
-            Advised by Prof. Chen-Ying Huang, National Taiwan University
-          </p>
-
-          <ul>
-            <li>
-              Led the design and implementation of behavioural economics
-              experiments examining how decision-making autonomy affects
-              emotional outcomes.
-            </li>
-            <li>
-              Independently developed a Python application with a graphical
-              interface to preprocess and analyse experimental data.
-            </li>
-            <li>
-              Reduced the data-analysis process from approximately two days to
-              three hours, enabling faster evaluation of treatment effects.
-            </li>
-            <li>
-              Managed participant recruitment and data collection and prepared
-              research materials and presentations.
-            </li>
-          </ul>
-        </td>
-      </tr>
-
-      <!-- Economics Publication Database Project -->
-      <tr>
-        <td width="28%" valign="top" align="center">
-          <p>
-            <b>National Taiwan University</b><br>
-            <em>Jun. 2023 – Aug. 2024</em>
-          </p>
-        </td>
-
-        <td width="72%" valign="top">
-          <p>
-            <a
-              href="https://github.com/HankLiTW/Database-of-Journal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <heading>Economics Journal Publication Database</heading>
-            </a>
-            <br>
-
-            <b>Research Assistant</b><br>
-            Advised by Prof. Chen-Ying Huang, National Taiwan University
-          </p>
-
-          <ul>
-            <li>
-              Led a team in collecting and organizing publication records from
-              economics journals across multiple publisher platforms.
-            </li>
-            <li>
-              Developed and adapted Python scrapers for journal-specific site
-              structures and anti-bot restrictions, then prepared the scripts
-              for other research team members to run.
-            </li>
-            <li>
-              Built a filtering pipeline to identify authors affiliated with
-              Taiwanese institutions and delivered structured datasets for
-              faculty analysis.
-            </li>
-            <li>
-              Completed the core scraping and filtering workflow within two
-              weeks after taking over the project.
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<!-- ================= End Research Experience ================= -->
-        <!-- =================== Teaching =================== -->
-        <div class="content anchor" id="teaching">
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
-            <tbody><tr><td><sectionheading>&nbsp;&nbsp;Teaching</sectionheading></td></tr>
-            </tbody>
-          </table>
-          <span style="line-height:1">
-            <ul>
-              <li><p style="text-align:left; padding-left:11px">
-                <a href="https://github.com/HankLiTW/Past-Project/tree/main/MITc%20Turtorial" target="_blank">Teaching Material in Statistics and Machine Learning in Python</a>, Mathematics Information Technology Club at NCCU, Director of Teaching Sector, Sep. 2021 - June 2022
-              </p></li>
-            </ul>
-          </span>
-        </div>
-      </div> <!-- container -->
-
-      <!-- =================== Honors & Awards =================== -->
-      <div class="content anchor" id="honors">
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
-          <tbody><tr><td><sectionheading>&nbsp;&nbsp;Honors & Awards</sectionheading></td></tr>
-          </tbody>
-        </table>
-        <span style="line-height:1.1">
-          <ul>
-            <li><p style="text-align:left; padding-left:11px">
-              Four-time recipient, Academic Excellence Award, NCCU <b>(awarded for top-5% semester-level academic performance)</b>
-            </p></li>
-            <li><p style="text-align:left; padding-left:11px">
-              Taishan Academic Scholarship, NCCU, Spring 2020 <b>(Academic Excellence Student in NCCU Statistics)</b>
-            </p></li>
-          </ul>
-        </span>
-      </div> <!-- container -->
-
-      <!-- =================== Interests =================== -->
-      <div class="content anchor" id="interests">
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
-          <tbody><tr><td><sectionheading>&nbsp;&nbsp;Interests & Extracurricular</sectionheading></td></tr>
-          </tbody>
-        </table>
-        <span style="line-height:1">
-           <ul>
-            <li><p style="text-align:left; padding-left:11px">
-              I was Vice Club Leader/Club Leader/Lab Manager at the Mathematics Information Technology Club.  
-            </p></li>
-            <li><p style="text-align:left; padding-left:11px">
-              Outside research, I enjoy playing tennis.
-            </p></li>
-          </ul>
-        </span>
-      </div> <!-- container -->
-    </div> <!-- outer container -->
-    <!-- <script>showPubs(0);</script> -->
-    <script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
+      </div>
+      <div class="portrait-shell">
+        <img class="portrait" src="assets/MingHanLi.jpg" alt="Portrait of Ming-Han Li">
+        <p class="portrait-note">Taipei · London</p>
+      </div>
+    </section>
+    <section class="section" id="about"><div class="wrap section-grid">
+      <div class="section-kicker"><span class="section-number">01</span><h2>Profile</h2></div>
+      <div class="about-copy"><p>I recently completed the MSc in Econometrics and Mathematical Economics at the London School of Economics and Political Science.</p><p>I am preparing to apply to PhD programs in operations management and operations research. My research interests include incentives, contracting, and decision-making under uncertainty.</p></div>
+    </div></section>
+    <section class="section" id="research"><div class="wrap section-grid">
+      <div class="section-kicker"><span class="section-number">02</span><h2>Research<br>experience</h2></div>
+      <div class="research-list">
+        <article class="research-item"><div class="meta"><strong>National Taiwan University</strong>Jun. 2023 – Aug. 2024</div><div><h3><a href="https://github.com/HankLiTW/SCR-Program" target="_blank" rel="noopener">Decision-Making Autonomy and Emotional Outcomes ↗</a></h3><p class="role">Research Assistant · Prof. Chen-Ying Huang</p><ul class="clean-list"><li>Led the design and implementation of behavioural economics experiments examining how decision-making autonomy affects emotional outcomes.</li><li>Independently developed a Python application with a graphical interface to preprocess and analyse experimental data.</li><li>Reduced the data-analysis process from approximately two days to three hours, enabling faster evaluation of treatment effects.</li><li>Managed participant recruitment and data collection and prepared research materials and presentations.</li></ul></div></article>
+        <article class="research-item"><div class="meta"><strong>National Taiwan University</strong>Jun. 2023 – Aug. 2024</div><div><h3><a href="https://github.com/HankLiTW/Database-of-Journal" target="_blank" rel="noopener">Economics Journal Publication Database ↗</a></h3><p class="role">Research Assistant · Prof. Chen-Ying Huang</p><ul class="clean-list"><li>Led a team in collecting and organizing publication records from economics journals across multiple publisher platforms.</li><li>Developed and adapted Python scrapers for journal-specific site structures and anti-bot restrictions, then prepared the scripts for other research team members to run.</li><li>Built a filtering pipeline to identify authors affiliated with Taiwanese institutions and delivered structured datasets for faculty analysis.</li><li>Completed the core scraping and filtering workflow within two weeks after taking over the project.</li></ul></div></article>
+      </div>
+    </div></section>
+    <section class="section" id="education"><div class="wrap section-grid">
+      <div class="section-kicker"><span class="section-number">03</span><h2>Education</h2></div>
+      <div class="education-list"><div class="education-row"><span class="year">2024—2025</span><span class="institution">London School of Economics</span><span class="degree">MSc Econometrics and Mathematical Economics</span></div><div class="education-row"><span class="year">2018—2023</span><span class="institution">National Chengchi University</span><span class="degree">BS Statistics · BA Economics · GPA 4.20/4.30</span></div></div>
+    </div></section>
+    <section class="section" id="teaching"><div class="wrap section-grid">
+      <div class="section-kicker"><span class="section-number">04</span><h2>Teaching</h2></div>
+      <div class="compact"><div class="compact-row"><strong><a href="https://github.com/HankLiTW/Past-Project/tree/main/MITc%20Turtorial" target="_blank" rel="noopener">Statistics and Machine Learning in Python ↗</a></strong><span>Director of Teaching Sector, NCCU MIT Club · 2021—2022</span></div></div>
+    </div></section>
+    <section class="section" id="honors"><div class="wrap section-grid">
+      <div class="section-kicker"><span class="section-number">05</span><h2>Honors &<br>awards</h2></div>
+      <div class="compact"><div class="compact-row"><strong>Academic Excellence Award</strong><span>Four-time recipient · Top 5% semester-level performance · NCCU</span></div><div class="compact-row"><strong>Taishan Academic Scholarship</strong><span>Academic Excellence Student in Statistics · NCCU · 2020</span></div></div>
+    </div></section>
+  </main>
+  <footer id="contact"><div class="wrap footer-grid"><div><span class="footer-name">Ming-Han Li</span><span class="footer-note">Operations · Incentives · Contracting</span></div><div class="footer-links"><a href="mailto:liminghan045@gmail.com">Email</a><a href="https://www.linkedin.com/in/ming-han-li-6b7797216/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/HankLiTW" target="_blank" rel="noopener">GitHub ↗</a></div></div></footer>
 </body>
 </html>
